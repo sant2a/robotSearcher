@@ -1,0 +1,159 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Extract_HotelInformation" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="514,1523" sap2010:WorkflowViewState.IdRef="Extract_HotelInformation_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Extract_HotelInformation" sap:VirtualizedContainerService.HintSize="494,1423" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:GenericValue" Name="var" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Booking.co...'" sap:VirtualizedContainerService.HintSize="452,1331" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="1115e5f2b599e60daf05903183ac7549" Selector="&lt;html title='Booking.com: *' /&gt;">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="418,1185" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="result" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'DIV  hotellist_inner'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl class='sr_item_content sr_item_content_slider_wrapper ' tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name2='ссылка' attr2='href' name='отель' attr='text'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl class='sr_item_content sr_item_content_slider_wrapper ' tag='div' idx='1' /&gt;&lt;webctrl class='sr_property_block_main_row' tag='div' idx='1' /&gt;&lt;webctrl class='sr_item_main_block' tag='div' idx='1' /&gt;&lt;webctrl class='sr-hotel__title-wrap' tag='div' idx='1' /&gt;&lt;webctrl class='sr-hotel__title  &amp;#10;' tag='h3' idx='1' /&gt;&lt;webctrl class='hotel_name_link url' tag='a' idx='1' /&gt;&lt;webctrl class='sr-hotel__name&amp;#10;' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='цена' attr='text'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl class='sr_item_content sr_item_content_slider_wrapper ' tag='div' idx='1' /&gt;&lt;webctrl class='sr_rooms_table_block clearfix' tag='div' idx='1' /&gt;&lt;webctrl class='room_details ' tag='div' idx='1' /&gt;&lt;webctrl class='featuredRooms sr_room_table sr_room_table_flex sr_rt_wider_urgency_msg &amp;#10; sr_rms_tbl_bdr ' tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl class='roomrow roomrow_flex entire_row_clickable&amp;#10;' tag='div' idx='1' /&gt;&lt;webctrl class='roomPrice roomPrice_flex  sr_discount ' tag='div' idx='1' /&gt;&lt;webctrl class='prco-wrapper bui-price-display prco-sr-default-assembly-wrapper prc-d-sr-wrapper' tag='div' idx='1' /&gt;&lt;webctrl class='prco-ltr-right-align-helper' tag='div' idx='2' /&gt;&lt;webctrl class='bui-price-display__value prco-inline-block-maker-helper' tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='оценка' attr='text'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl class='sr_item_content sr_item_content_slider_wrapper ' tag='div' idx='1' /&gt;&lt;webctrl class='sr_property_block_main_row' tag='div' idx='1' /&gt;&lt;webctrl class='sr_item_review_block' tag='div' idx='1' /&gt;&lt;webctrl class='reviewFloater reviewFloaterBadge__container' tag='div' idx='1' /&gt;&lt;webctrl class='&amp;#10;sr-review-score&amp;#10;review-breakdown-tooltip-link&amp;#10;' tag='div' idx='1' /&gt;&lt;webctrl class='sr-review-score__link' tag='a' idx='1' /&gt;&lt;webctrl class='bui-review-score c-score bui-review-score--end' tag='div' idx='1' /&gt;&lt;webctrl class='bui-review-score__badge' tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='тип номера' attr='text'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl class='sr_item_content sr_item_content_slider_wrapper ' tag='div' idx='1' /&gt;&lt;webctrl class='sr_rooms_table_block clearfix' tag='div' idx='1' /&gt;&lt;webctrl class='room_details ' tag='div' idx='1' /&gt;&lt;webctrl class='featuredRooms sr_room_table sr_room_table_flex sr_rt_wider_urgency_msg &amp;#10; sr_rms_tbl_bdr ' tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl class='roomrow roomrow_flex entire_row_clickable&amp;#10;' tag='div' idx='1' /&gt;&lt;webctrl class='roomName roomName_flex&amp;#10;' tag='div' idx='1' /&gt;&lt;webctrl class='roomNameInner' tag='div' idx='1' /&gt;&lt;webctrl class='room_link' tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' text='—' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_11" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl aaname='5' parentid='search_results_table' tag='DIV' /&gt;" SimulateClick="True">
+                <ui:ExtractData.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="51a6c9290814c53ba1686b65ff906a68" Selector="&lt;webctrl id='hotellist_inner' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:ExtractData.Target>
+              </ui:ExtractData>
+            </Sequence>
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="376,700" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,553" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="result2" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="ui:GenericValue">[var]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="ui:GenericValue">[row("цена").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[result]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[var.Split("р".ToCharArray)(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[result2]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[result.Replace(" ","")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">[row("цена")]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Object">[result2.Trim]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[row(&quot;цена&quot;).ToString]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+            <ui:WriteRange AddHeaders="True" DataTable="[ExtractDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="376,115" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Отели" WorkbookPath="Data\result.xlsx">
+              <ui:WriteRange.StartingCell>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:WriteRange.StartingCell>
+            </ui:WriteRange>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+  </Sequence>
+</Activity>
